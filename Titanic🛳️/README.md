@@ -24,6 +24,17 @@ This project involves analyzing the Titanic dataset to predict passenger surviva
 - **Jupyter Notebook** 📓
 
 
+## Output
+
+<table>
+  <tr>
+<td class="square-cell"></td>
+    <td><img src="https://github.com/user-attachments/assets/9829752f-c820-4be9-9c4a-8d322c34be3d"> </td>
+    <td><img src="https://github.com/user-attachments/assets/3d69cf92-893d-430e-96b2-32cce4a173c0"> </td>
+    <td><img src="https://github.com/user-attachments/assets/7405c451-17cc-4135-86cd-7f773a9233ec"> </td>
+  </tr>
+ </table>
+
 ## Acknowledgments 🙏
 - Titanic dataset from ([Kaggle](https://www.kaggle.com/datasets/brendan45774/test-file/data))
 - My mentor at ([Compozent](https://compozent.in/)) for guiding me through the project (Aditya Sir)

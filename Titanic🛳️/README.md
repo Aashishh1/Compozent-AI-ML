@@ -1,29 +1,20 @@
-# Titanic Survival Prediction 🛳️🌊
+<div align='center'><h2> <b>Titanic Survival Prediction 🛳️🌊<b></h2></div>
 
-![Titanic Image](https://your-image-url.com)
+![Titanic_Portside_Diagram](https://github.com/user-attachments/assets/0dddaf54-f8c0-43da-b1f3-cc5c67924a6a)
 
 
 ## Project Overview 📊
-This project analyzes the Titanic dataset to predict the survival chances of passengers based on various features such as age, gender, class, and more. The goal is to understand the factors that influenced survival rates and apply machine learning models to predict whether a passenger survived or not.
 
-## Dataset 🔢
-The Titanic dataset is a collection of information about passengers aboard the Titanic, including whether they survived or not. The dataset contains the following features:
-- **PassengerId**: Unique identifier for each passenger
-- **Pclass**: Ticket class (1st, 2nd, 3rd)
-- **Name**: Name of the passenger
-- **Sex**: Gender of the passenger (Male/Female)
-- **Age**: Age of the passenger
-- **SibSp**: Number of siblings/spouses aboard
-- **Parch**: Number of parents/children aboard
-- **Fare**: The fare the passenger paid
-- **Embarked**: Port of embarkation (C = Cherbourg, Q = Queenstown, S = Southampton)
-- **Survived**: 1 if the passenger survived, 0 if not
+This project involves analyzing the Titanic dataset to predict passenger survival using various features that might have influenced their chances. Below are the key features in the dataset:
 
-## Objective 🎯
-The main objective is to:
-- Explore and clean the Titanic dataset 🔍
-- Build a predictive model to determine the survival rate of passengers 👩‍💻
-- Visualize the data and understand the patterns 📈
+- **Gender** 👩‍🦰👨‍🦱:- Indicates the gender of the passenger (Male/Female), which had a significant impact on survival rates.
+- **Age** 🧑‍🦳👵:- The age of the passenger. Younger passengers (especially children) had higher survival rates.
+- **Number of Siblings/Spouses Aboard** 👨‍👩‍👧‍👦: This feature indicates how many family members were traveling with the passenger. Having family aboard may have influenced survival.
+- **Ticket Class (Tier)** 🏷️:- The class of the ticket purchased (1st, 2nd, or 3rd class). Higher-class passengers had better chances of survival.
+- **Embarked** 🛳️:- Port of embarkation (C = Cherbourg, Q = Queenstown, S = Southampton). Passengers boarding from different ports showed different survival rates.
+- **Cabin** 🛏️:- The cabin number, which can be important for grouping passengers by proximity and class.
+- **Fare** 💵:- The fare the passenger paid. Wealthier passengers generally had a higher survival rate.
+- **Number of Parents/Children Aboard** 👶🧑‍🦳:- This feature tracks if passengers were traveling with parents or children, which could have affected their survival chances.
 
 ## Tools & Technologies 🛠️
 - **Python** 🐍
@@ -32,20 +23,7 @@ The main objective is to:
 - **Matplotlib/Seaborn** 📉
 - **Jupyter Notebook** 📓
 
-## Key Steps Taken 🔄
-1. **Data Cleaning** 🧹: Handling missing values, converting categorical features into numeric.
-2. **Exploratory Data Analysis (EDA)** 🔍: Visualizing the data to find patterns and insights.
-3. **Modeling** 📈: Training machine learning models such as Logistic Regression, Decision Trees, and Random Forest.
-4. **Evaluation** 🔍: Evaluating model accuracy and performance using metrics like accuracy, precision, and recall.
-
-## Insights 💡
-- **Survival rate**: Around 38% of passengers survived.
-- **Gender**: Females had a significantly higher survival rate than males.
-- **Class**: Passengers in 1st class had a higher survival rate compared to those in 3rd class.
-
-## Conclusion ✅
-This project helped me develop a deeper understanding of data science, machine learning, and how to apply these techniques to real-world datasets. It was an insightful experience during my internship at Compozent! 🎓
 
 ## Acknowledgments 🙏
-- Titanic dataset from [Kaggle](https://www.kaggle.com/c/titanic)
-- My mentor at Compozent for guiding me through the project
+- Titanic dataset from ([Kaggle](https://www.kaggle.com/datasets/brendan45774/test-file/data))
+- My mentor at ([Compozent](https://compozent.in/)) for guiding me through the project (Aditya Sir)

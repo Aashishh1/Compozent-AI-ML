@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Predictor</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #4e54c8, #8f94fb);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Main Container */
+        .container {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 30px;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Header */
+        h1 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #4e54c8;
+        }
+
+        /* Form Groups */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            box-shadow: 0 0 6px rgba(78, 84, 200, 0.4);
+        }
+
+        /* Button */
+        button {
+            width: 100%;
+            background: linear-gradient(135deg, #4e54c8, #8f94fb);
+            color: #fff;
+            border: none;
+            padding: 12px 0;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.3s ease-in-out;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(78, 84, 200, 0.4);
+        }
+
+        /* Result */
+        .result {
+            margin-top: 20px;
+            background: #f8f9fa;
+            color: #333;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>House Price Predictor</h1>
+        <div class="form-group">
+            <label for="square_feet">Square Feet</label>
+            <input type="number" id="square_feet" placeholder="Enter square footage" required min="0">
+        </div>
+        <div class="form-group">
+            <label for="bedrooms">Bedrooms</label>
+            <input type="number" id="bedrooms" placeholder="Enter number of bedrooms" required min="1">
+        </div>
+        <div class="form-group">
+            <label for="bathrooms">Bathrooms</label>
+            <input type="number" id="bathrooms" placeholder="Enter number of bathrooms" required min="1">
+        </div>
+        <div class="form-group">
+            <label for="location">Location</label>
+            <select id="location" required>
+                <option value="0">City</option>
+                <option value="1">Suburban</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="age_of_house">Age of House (Years)</label>
+            <input type="number" id="age_of_house" placeholder="Enter age of house" min="0" required>
+        </div>
+        <div class="form-group">
+            <label for="floor_number">Floor Number</label>
+            <input type="number" id="floor_number" placeholder="Enter floor number" required min="1">
+        </div>
+        <button onclick="makePrediction()">Predict Price</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        async function makePrediction() {
+            const square_feet = document.getElementById('square_feet').value;
+            const bedrooms = document.getElementById('bedrooms').value;
+            const bathrooms = document.getElementById('bathrooms').value;
+            const location = document.getElementById('location').value;
+            const age_of_house = document.getElementById('age_of_house').value;
+            const floor_number = document.getElementById('floor_number').value;
+
+            const response = await fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ square_feet, bedrooms, bathrooms, location, age_of_house, floor_number }),
+            });
+
+            const result = await response.json();
+            document.getElementById('result').innerText = result.error || `Predicted Price: ₹${result.prediction}`;
+        }
+    </script>
+</body>
+</html>

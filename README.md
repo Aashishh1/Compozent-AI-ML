@@ -1,3 +1,2 @@
-# Compozent Internship Projects
+<div align='center'><img style="width:30%" src='https://github.com/user-attachments/assets/a1f50e99-d174-40a6-bb8f-a49d89ecb45f'/></div>
 
-Welcome to the repository showcasing my projects and work completed during my internship at Compozent. This repository focuses on the practical applications of Artificial Intelligence (AI), Machine Learning (ML), and Data Analytics, including various tools and technologies used throughout the internship.
